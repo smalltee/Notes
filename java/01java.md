@@ -1,5 +1,3 @@
-
-
 ## 一、基础知识
 
 ### 1-1 计算机组成
@@ -137,15 +135,15 @@ Java之父？James Gosling
 
 Java语言包含三大块：
 
-​	J2SE：平台标准版，可以做桌面程序开发
++ JavaME 微型版，用于开发小型设备、智能卡、移动端应用
 
-​		它是整个Java技术的基础和核心
++ JavaSE：标准版，用于创建桌面应用程序。（企业用JavaSE创建桌面应用比较少）。它是整个Java技术的基础和核心
 
-​	J2EE：平台企业版，可以做网站。
-
-​	J2ME：平台微型版，可以做移动端程序开发。
++ JavaEE：企业版，用于创建企业应用那个，（JavaEE是JavaSE的升级版，语言基础依然是JavaSE，核心算法依然是JavaSE）
 
 注意：在JDK5.0时改名了JAVASE、JAVAEE、JAVAME
+
+主要做企业级开发，
 
 
 
@@ -173,7 +171,7 @@ Java语言包含三大块：
 
 ```js
 
-Java源代码 --> 编译 --> Java字节码（可跨平台） --> 运行 --> JVM Java虚拟机 ---（windows/ Linux / / Mac）
+Java源代码 --> 编译 --> Java字节码（可跨平台） --> 运行 --> JVM Java虚拟机 --- 这一步的对应看下面的图（windows/ Linux / / Mac）
 
 ```
 
@@ -233,6 +231,23 @@ JDK、JRE、JVM各自是什么，以及之间的关系?
 class Hello{
 	public static void main(String[] args){
 		System.out.print("Hello World");
+	}
+}
+```
+
+```java
+/**
+ * public 修饰符 公共
+ * static 静态
+ * void 无返回值
+ * main 主方法
+ * String [] args 参数
+ */
+public class HelloWorld {
+	public static void main(String [] args) {
+		// 写上我们的注释内容
+		System.out.println("Hello world");
+		
 	}
 }
 ```
@@ -322,7 +337,7 @@ System.out.println("输出内容同上，但是输出后换行");
 
 ​	目的：增加程序可读性。
 
-​	注释分类：
+​	注释分类：三种
 
 ```java
 单行注释：// 
@@ -346,13 +361,215 @@ System.out.println("输出内容同上，但是输出后换行");
 
 
 
+### 2-7 classpath
+
+注意：在默认情况下，运行某个字节码文件时在当前目录下找。
+
+​			如果找到运行的字节码文件则执行，否则报错。
+
+**配置classpath**
+
++ 临时配置 classpath
+
+```dos
+使用set命令完成临时配置classpath
+	set classpath=F:\work-kaifa\学习目录\java\00
+
+使用set命令完成查看是否配置 classpath
+	set classpath
+
+使用set命令完成删除classpath的配置
+	set classpath=
+	配置完成后，关闭dos命令窗口 classpath 就失效了。
+
+set classpath=F:\work-kaifa\学习目录\java\00  后面没有加分号 
+如果用setclasspath做了配置了，不管你当前目录下有没有，直接去配置的classpath里面去找，找到运行，找不到报错。(不管当前目录有没有此类)
+
+set classpath=F:\work-kaifa\学习目录\java\00; 
+	加了分号之后，在配置目录下找，找不到再来当前目录找一下。
+
+也可以写多个，用分号隔开，查找顺序的优先级
+```
+
+
+
++ 永久配置 classpath
+
+在环境变量那里和path是一个级别的 classpath 那里配置，用分号隔开。
+
+
+
+## 三、基础知识
+
+### 3-1 关键字
+
+> 被java定义好的， 在java中具有特殊意义 赋予特殊含义的单词，全部采用小写字母
+
+```java
+比如 class public static void ...
+```
+
+
+
+### 3-2 标识符 命名规范
+
+也就是名字，对类名、变量名称、方法名称、参数名称等的修饰。
+
+标识符的命名规则：
+
++ 以字母、下划线或$开头，其后可以是字母、数字、下划线_或\$
++ 区分大小写，
++ 不能使用关键字
+
+标识符命名规范
+
++ 建议：见名知意，也就是说最好编写单词，如：name,age
++ 建议：类名每个单词首字母大写，如：Hello、Student
++ 建议：变量名称、方法名称、参数名称采用**驼峰命名法**， getInfo、
++ 建议：标识符的长度不要超过15个字符。
+
+
+
+### 3-3 字面值
+
++ **整数类型字面值**，如：100、9、-1、0
+
++ **浮点类型字面值**，如：0.1     3.14159   -98.999
+
++ **字符串类型字面值**，如： "你好"  "98" "3.19"
+
+  ​	字符串：表示一次可以存放0个、1个或多个，但是必须使用英文的**双引号引起来**。
+
++ **字符类型字面值**, 如： 'a'  '6' '男'
+
+  字符类型：表示一次只能存放一个，并且使用英文的**单引号引起来**。
+
++ **布尔值类型字面值** true、false
+
+```java
+public class DataType {
+	public static void main(String [] args) {
+		// 整型 
+		// int 1 2 3 4 6
+		int sum = 181;
+				
+		// 小数
+		float age = 1.1f;
+		
+		// 布尔值
+		// true false
+		boolean flag = true;
+		System.out.println(sum);
+		System.out.println(age);
+		System.out.println(flag);
+		
+		// 字符类型
+		char name = 'a';
+		
+		char name1 = 'b';
+		System.out.println(name);
+
+		
+		// 字符串类型
+		String str = "我是一个字符串";
+		System.out.println(str);
+		
+		
+		String demoName = null;
+		System.out.println(demoName == null);
+		
+		
+		
+	}
+}
+```
 
 
 
 
 
+### 3-4 进制以及进制之间转换
+
+常用进制
+
++ 二进制：在计算机中使用，取值范围0和1
++ 八进制：取值范围 0--7
++ 十进制：在日常生活中使用，取值范围 0--9
++ 十六进制：取值范围 0---9和 A--F
 
 
 
+进制转换基本的，不写笔记了。
 
 
+
+### 3-5 字符编码
+
+**字符编码**：按照某种格式规定将数据存储在计算机中。
+
+常用字符编码
+
++ ASCII
+
+   'a' -------> 97     'b' -----> 98
+
++ iso8859 - 1 西欧语言编码，兼容ASCII
+
++ GBK/GB2312:中文编码
+
++ Unicode：统一全球所有国家文字
+
+  常用的有：utf-8  utf-16 utf-32
+
+  注意：java源代码采用的unicode编码。
+
+  乱码、编码、解码
+
+
+
+### 3-7 变量
+
+变量：存放数据的，并且该变量中的数据是可以发生改变的。
+
+常用的数据类型：
+
++ 整数类型 int
++ 浮点类型 double
++ 字符串类型 String
++ 字符类型 char
++ 布尔类型 boolean
+
+变量的操作步骤
+
+```java
+第一步：声明变量，也就是确定当前变量存放数据的类型。
+    语法格式：数据类型 变量名称
+    如 int a;
+第二步：赋值，也就是将 = 右侧的值赋给等号左侧的变量名称。
+    语法格式：变量名称 = 值；
+    如 a = 10;
+第三步：使用
+    注意：暂时使用为输出变量中的值。
+```
+
+```java
+class Var02{
+	public static void main(String[] args){
+		// 变量操作步骤
+		// 第一步：声明变量
+		int num;
+		double num2;
+		String str;
+		// 第二步赋值
+		num = 2018;
+		num2 = 3.14;
+		str = "给str赋值字符串";
+		// 第三步：使用
+		System.out.print("变量的名称" + num);
+		System.out.print("num2==>" + num2);
+		System.out.print(str);
+	}
+}
+```
+
+**注意：**变量声明之后必须使用，要不然连编译那个步骤都通过不了。
