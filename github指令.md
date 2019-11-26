@@ -312,3 +312,24 @@ https://blog.csdn.net/u013485584/article/details/53319044
 https://blog.csdn.net/HeatDeath/article/details/79501748
 ```
 
+
+
+### 忽略不上传的文件
+
+```html
+增加 .gitignore 文件，里面添加需要忽略的文件(file_not_wanted)
+
+执行命令 git rm -r --cached .
+注意，最后的点。不要省略。
+
+最后重新将所有文件添加到追踪项。
+git add -A
+然后再 commit 即可。
+```
+
+
+
+
+
+
+
