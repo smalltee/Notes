@@ -329,7 +329,12 @@ git add -A
 
 
 
+### 在不同的分支中更新同样的代码
 
+```git
+在其他分支中 commit之后，会得到一个 commitid
 
-
+切换到想要修改的分支之下
+git cherry-pick commitid 就会更新
+```
 
