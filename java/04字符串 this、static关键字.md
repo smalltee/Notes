@@ -444,7 +444,7 @@ System.out.println(newStr2); // heaao
 
 
 
-#### 1-5总结
+#### 总结
 
 1、String要使用直接赋值方式、因为使用 `new` 会开辟2个空间，造成内存浪费。
 
@@ -1015,7 +1015,7 @@ class Person11{
 
 
 
-#### 3-6总结
+#### 总结
 
 使用static声明属性与非static声明的属性区别
 
