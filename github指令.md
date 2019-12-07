@@ -308,7 +308,6 @@ git pull origin master --allow-unrelated-histories
 小问题去试验
 
 ```js
-https://blog.csdn.net/u013485584/article/details/53319044
 https://blog.csdn.net/HeatDeath/article/details/79501748
 ```
 
@@ -317,6 +316,8 @@ https://blog.csdn.net/HeatDeath/article/details/79501748
 ### 忽略不上传的文件
 
 ```html
+当在 .ignore 之前上传了某些文件之后，你把所有的文件推到远程仓库中时，后面加上ignore是没有用的，可以使用下面的命令取消所有的再重新上传。
+
 增加 .gitignore 文件，里面添加需要忽略的文件(file_not_wanted)
 
 执行命令 git rm -r --cached .

@@ -340,7 +340,7 @@ public class Demo01 {
 
 ## instanceof
 
-#### 2-1 instanceof 的作用
+#### 2-1 instanceof的作用
 
 掌握 `instanceof` 关键字的作用及使用时机
 
@@ -395,23 +395,33 @@ false
 
 
 
+#### 2-2对象转型进行安全验证
+
 可以使用 `instanceof` 对对象转型进行安全验证
 
 
 
+```java
+public static void fun(P p) {
+		p.fun1();
+		if(p instanceof Y) {
+			Y yp = (Y)p;
+			yp.fun3();
+		}else {
+			System.out.println("你不是我儿子");
+		}
+	}
+```
 
 
 
 
 
+#### 总结
 
+**一个类永远不要去继承已经实现好的类，而只能抽象类或是实现接口。**
 
+`instanceof` 用于判断一个对象是否是某个类的实例。
 
-
-
-
-
-
-
-
+在对象向下转型之前最好使用 `instanceof` 关键字进行验证。
 
