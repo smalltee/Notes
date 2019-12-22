@@ -12,5 +12,3 @@
 
 毕业设计WebApp   技术栈koa2 + mysql + redis + react  [计划管理助手](http://bs.xiaoye121.com)
 
-
-

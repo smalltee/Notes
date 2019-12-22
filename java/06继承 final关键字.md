@@ -658,7 +658,7 @@ public static final String INFO = "常量";
 
 #### 总结
 
-在一般开发中，使用 `final` 定义产量是最常见的
+在一般开发中，使用 `final` 定义常量是最常见的
 
 使用 `static final` 修饰可以声明全局常量。
 

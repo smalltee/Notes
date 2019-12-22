@@ -1,3 +1,9 @@
+[TOC]
+
+
+
+
+
 ## websocket
 
 ​	就是不http /https协议了
@@ -263,4 +269,8 @@ io.clients[sessionID].send()
 
 如需广播消息，只需要在调用 emit 和 send 方法之前添加 broadcast 标记即可。广播的意思是向除发起广播之外的所有客户端发送消息。
 ```
+
+
+
+
 
