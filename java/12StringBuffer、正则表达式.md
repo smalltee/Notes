@@ -291,16 +291,134 @@ String.replaceAll(正则的规则,  String str);
 
 
 
+```reg
+\\d 匹配数字
+\\D 不是数字
+```
 
 
 
 
 
+#### 2-1小例子 检测是否是QQ号
+
+```java
+/*
+ 	检测QQ号码是否合法
+	 	0不能开头、全数字、5-10位
+	*/
+
+String QQ = "1236";
+boolean isQQ = QQ.matches("[1-9][0-9]{4,9}");
+System.out.println(isQQ);
+```
+
+```java
+QQ.matches("[1-9]\\d{4,9}");
+\d 表示的是数字 0-9
+```
 
 
 
 
 
+#### 2-2检查手机号码是否合法
+
+```java
+String phone = "1308116605";
+boolean isPhone = phone.matches("^1[34578][0-9]{9}");
+System.out.println(isPhone);
+```
+
+```java
+phone.matches("^1[34578][\d]{9}")
+```
+
+
+
+
+
+#### 2-3对字符串进行切割
+
+```java
+String string = "我是一个字符串";
+String[] str1 = string.split("");
+for(int i=0;i<str1.length;i++) {
+    System.out.println(str1[i]);
+}
+```
+
+```java
+String string = 2019-12-13;
+String[] str1 = string.split("-");
+```
+
+贪婪匹配
+
+```java
+String string = "2020   1  07";
+String[] str1 = string.split(" +"); // +
+for(int i=0;i<str1.length;i++) {
+    System.out.println(str1[i]);
+}
+```
+
+
+
+```java
+切割ip地址
+String string = "192.168.12.233";
+String[] str1 = string.split("\\.");
+```
+
+
+
+
+
+#### 2-4对字符串进行替换
+
+```java
+/*
+	"hello12345world6789012"; // 将所有的数字字符替换掉
+*/
+String string = "hello12345world6789012";
+String str1 = string.replaceAll("\\d", "");
+System.out.println(str1);
+```
+
+
+
+```java
+String string = "hello12345world6789012";
+String str1 = string.replaceAll("\\d+", "#");
+System.out.println(str1);
+
+// 或者
+string.replaceAll("[\\d]+", "#");
+```
+
+
+
+#### 2-5匹配小数
+
+```java
+匹配小数
+"\\d+\\.\\d+"
+```
+
+
+
+```java
+匹配负数
+"-\\d\\.\\d+"
+```
+
+
+
+```java
+匹配保留两位小数的整数
+"\\d+\\.\\d{1,3}"
+```
 
 
 
