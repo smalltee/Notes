@@ -422,6 +422,35 @@ string.replaceAll("[\\d]+", "#");
 
 
 
+#### 2-6 检测邮箱
+
+>检测邮箱,规则如下有规律
+>	1234567@qq.com
+>	mymail@sina.com
+>	nimail@163.com
+>		 @123.com
+>		 @126.com
+>		 @yahu.com
+
+```java
+System.out.println("检测邮箱");
+String email = "123456@qq.com.cn";
+boolean a = email.matches("^[a-zA-Z_0-9]+@[a-zA-Z_0-9]+(\\.[a-z]+)+$");
+System.out.println("是否是邮箱  " + a);
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
