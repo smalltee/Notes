@@ -106,7 +106,7 @@ function fun(){
   	alert(sum);
 }
 fun(1,2,3,4,5,6,6);
-//arguments.length 
+//arguments.length
 ```
 
 ## 四、arguments.callee
