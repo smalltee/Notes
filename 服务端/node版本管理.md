@@ -19,3 +19,12 @@ gnvm install 14.3.0
 // 版本号
 gnvm use 14.3.0
 ```
+
+
+
+
+
+## nrm
+
+npm 源管理
+
